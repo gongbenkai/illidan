@@ -29,9 +29,3 @@ mybatis:
     typeAliasesPackage: com.gong.illidan.dao.model
     mapperLocations: classpath:/com/gong/illidan/dao/*.xml
     configLocation: classpath:/conf/mybatis-config.xml
-
-# LOGGING
-logging:
-    level:
-       com.gong.illidan:DEBUG
-       com.ibatis:DEBUG

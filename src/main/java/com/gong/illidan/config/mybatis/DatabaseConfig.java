@@ -29,7 +29,7 @@ public class DatabaseConfig implements EnvironmentAware {
         this.propertyResolver = new RelaxedPropertyResolver(env, "jdbc.");
     }
     
-    @Bean
+    @Bean(destroyMethod = "shutdown")
     public DataSource dataSource() {
 //        return new EmbeddedDatabaseBuilder().setType(H2).build();
          HikariConfig hikariConfig = new HikariConfig();
