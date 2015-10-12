@@ -1,0 +1,37 @@
+# Server settings
+server:
+    port:8080
+    address:localhost
+
+# DATASOURCE
+jdbc:
+    dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&amp;charaterEncoding=utf-8
+    username: root
+    password: root
+    cachePrepStmts: true
+    prepStmtCacheSize: 250
+    prepStmtCacheSqlLimit: 2048
+    useServerPrepStmts: true
+    minimumIdle: 20
+    maximumPoolSize: 100
+
+# SPRING PROFILES
+spring:       
+    # HTTP ENCODING
+    http:
+        encoding.charset: UTF-8
+        encoding.enable: true
+        encoding.force: true
+
+# MyBatis
+mybatis:
+    typeAliasesPackage: com.gong.illidan.dao.model
+    mapperLocations: classpath:/com/gong/illidan/dao/*.xml
+    configLocation: classpath:/conf/mybatis-config.xml
+
+# LOGGING
+logging:
+    level:
+       com.gong.illidan:DEBUG
+       com.ibatis:DEBUG
