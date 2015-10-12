@@ -7,6 +7,7 @@ import com.gong.illidan.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,6 +27,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    @Cacheable(value="illidan",key="#userId + 'findById'") 
     public User getUser(int userId) {
 //        User user = new User("dude@dude.com1", "thedude1");
 //        userMapper.addUser(user);
